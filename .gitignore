@@ -1,7 +1,9 @@
 # Logs
 logs
 *.log
+/libpeerconnection.log
 npm-debug.log*
+testem.log
 
 # Runtime data
 pids
@@ -13,6 +15,8 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
+/connect.lock
+/coverage/*
 
 # nyc test coverage
 .nyc_output
@@ -26,9 +30,14 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
+# compiled output
+/dist
+/tmp
+
 # Dependency directories
 node_modules
 jspm_packages
+/bower_components
 
 # Optional npm cache directory
 .npm
