@@ -1,8 +1,14 @@
 # ember-jshbs
 
-Javascript in Handlebars (jshbs) provides 4 helpers to drastically improve Handlebars literacy:
+*ember-jshbs* is Javascript in Handlebars for Ember. It aims to reinstate as much of Javascript's expressive power in Handlebars with a bear minimum of API surface & opinion. It consists of 4 helpers that drastically extend Handlebars:
 
-## {{global path}}
+* [`global`](#globalpath)
+* [`invoke`](#invokefn-arguments)
+* [`operate`](#operateoperator-operands)
+   * [`new`](#operate-newconstructor-arguments)
+* [`object`](#objectkey-value)
+
+## `{{global `*`path`*`}}`
 
 Returns the global object - `global` or `window`. If `path` is supplied, we perform the dumb JS equivalent of `Ember.get` without the Ember magic. Thus:
 
@@ -10,11 +16,11 @@ Returns the global object - `global` or `window`. If `path` is supplied, we perf
 | :--- | :--- |
 | <pre lang="hbs">{{global 'document.body.childNodes.0.tagName'}}</pre> | <pre land="js">window.document.body.childNodes.0.tagName</pre> |
 
-## {{invoke fn ...args}}
+## `{{invoke `*`fn ...arguments`*`}}`
 
-Calls `fn` with `args`. If this seems insufficient for your functional ambitions, bear in mind you can do ludicrous stuff like `{{invoke (global 'Function.prototype.bind.apply')}}` or `{{invoke (get fn 'apply')}}` etc.
+Calls `fn` with `arguments`. If this seems insufficient for your functional ambitions, bear in mind you can do ludicrous stuff like `{{invoke (global 'Function.prototype.bind.apply')}}` or `{{invoke (get fn 'apply')}}` etc.
 
-## `{{operate operator ...operands}}`
+## `{{operate `*`operator ...operands`*`}}`
 
 Applies `operator` to `operands`. Helpers are functions, so we can't position operators relative to their operands as normal, but in practice it's mostly procedural:
 
@@ -32,7 +38,7 @@ The available operators are:
 
 `new` is a special case:
 
-### `{{operate 'new' constructor ...arguments}}`
+## `{{operate 'new' `*`constructor ...arguments`*`}}`
 
 ```hbs
 {{operator 'new' (global 'Map')
@@ -47,7 +53,7 @@ The available operators are:
 new Map([['x','1']['y','2']])
 ```
 
-## `{{object ...[key, value]}}`
+## `{{object `*`...[key, value]`*`}}`
 
 The one thing that remains impossible with the 3 helpers above is declaring objects. The `object` helper returns objects based on the signature above. Thus:
 
@@ -69,7 +75,7 @@ The one thing that remains impossible with the 3 helpers above is declaring obje
 }
 ```
 
-> This is useful for components that expect esoteric structured input. I find pseudo-MVC 'separation of concerns' is self-defeating if it requires that a nested component's esoteric input needs to be computed in a higher order model - information and transformation should happen as close to its site of consumption as possible. So the object above might be introduced into a template as eg `{{my-component options=(object 'foo' 'bar')}}`
+This is useful for components that expect esoteric structured input. I find pseudo-MVC 'separation of concerns' is self-defeating if it requires that a nested component's esoteric input needs to be computed in a higher order model - information and transformation should happen as close to its site of consumption as possible. So the object above might be introduced into a template as eg `{{my-component options=(object 'foo' 'bar')}}`
 
 ***
 
