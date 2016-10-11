@@ -1,7 +1,7 @@
 {
   "name": "ember-jshbs",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Javascript in Handlebars: a collection of helpers to bring Javascript global objects and operators into Handlebars.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,7 +11,14 @@
     "start": "ember server",
     "test": "ember try:each"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barneycarroll/ember-jshbs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/barneycarroll/ember-jshbs/issues"
+  },
+  "homepage": "https://github.com/barneycarroll/ember-jshbs#readme",
   "engines": {
     "node": ">= 0.10.0"
   },

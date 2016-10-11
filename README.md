@@ -1,6 +1,6 @@
 # ember-jshbs
 
-jshbs stands for Javascript in Handlebars: a collection of helpers to bring Javascript global objects and operators into Handlebars.
+Javascript in Handlebars: a collection of helpers to bring Javascript global objects and operators into Handlebars.
 
 ***
 
