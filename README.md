@@ -1,6 +1,12 @@
 # ember-jshbs
 
-Javascript in Handlebars (jshbs) provides 4 helpers to drastically improve Handlebars literacy:
+*ember-jshbs* is Javascript in Handlebars for Ember. It aims to reinstate as much of Javascript's expressive power in Handlebars with a bear minimum of API surface & opinion. It consists of 4 helpers that drastically extend Handlebars:
+
+* [`global`](#globalpath)
+* [`invoke`](#invokefn-arguments)
+* [`operate`](#operateoperator-operands)
+   * [`new`](#operate-newconstructor-arguments)
+* [`object`](#objectkey-value)
 
 ## `{{global `*`path`*`}}`
 
@@ -10,9 +16,9 @@ Returns the global object - `global` or `window`. If `path` is supplied, we perf
 | :--- | :--- |
 | <pre lang="hbs">{{global 'document.body.childNodes.0.tagName'}}</pre> | <pre land="js">window.document.body.childNodes.0.tagName</pre> |
 
-## `{{invoke `*`fn ...args`*`}}`
+## `{{invoke `*`fn ...arguments`*`}}`
 
-Calls `fn` with `args`. If this seems insufficient for your functional ambitions, bear in mind you can do ludicrous stuff like `{{invoke (global 'Function.prototype.bind.apply')}}` or `{{invoke (get fn 'apply')}}` etc.
+Calls `fn` with `arguments`. If this seems insufficient for your functional ambitions, bear in mind you can do ludicrous stuff like `{{invoke (global 'Function.prototype.bind.apply')}}` or `{{invoke (get fn 'apply')}}` etc.
 
 ## `{{operate `*`operator ...operands`*`}}`
 
