@@ -1,6 +1,14 @@
-# Ember-jshbs
+# ember-jshbs
 
-This README outlines the details of collaborating on this Ember addon.
+jshbs stands for Javascript in Handlebars: a collection of helpers to bring Javascript global objects and operators into Handlebars.
+
+***
+
+No functional code as yet.
+
+***
+
+The following outlines the details of collaborating on this Ember addon.
 
 ## Installation
 
