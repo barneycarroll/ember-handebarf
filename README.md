@@ -1,6 +1,6 @@
 # ember-jshbs
 
-*ember-jshbs* is Javascript in Handlebars for Ember. It aims to reinstate as much of Javascript's expressive power in Handlebars with a bear minimum of API surface & opinion. It consists of 4 helpers that drastically extend Handlebars:
+*ember-jshbs* is Javascript in Handlebars for Ember. It aims to reinstate as much of Javascript's expressive power in Handlebars with a bare minimum of API surface & opinion. It consists of 4 helpers that drastically extend Handlebars:
 
 * [`global`](#globalpath)
 * [`invoke`](#invokefn-arguments)
